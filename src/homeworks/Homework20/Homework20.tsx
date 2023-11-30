@@ -18,8 +18,8 @@ function Homework20() {
     };
 
     const langs = programLangs.map((lang: string) => {
-        return <li key = {`program-langs-${Math.random()}`}>{lang}</li>;
-    });
+        return <li key = {`program-langs-${Math.random()}`}>{lang}</li>;}
+    );
 
 
     return <div className="card-wrapper">
