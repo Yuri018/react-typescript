@@ -17,7 +17,7 @@ function Homework20() {
         return "Employee";
     };
 
-    const langs = programLangs.map((lang) => {
+    const langs = programLangs.map((lang: string) => {
         return <li key = {`program-langs-${Math.random()}`}>{lang}</li>;
     });
 
