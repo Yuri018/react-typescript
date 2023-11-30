@@ -1,0 +1,26 @@
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px 20px 20px 20px;
+  padding: 20px;
+  background-color: antiquewhite;
+}
+
+.card-name {
+  font-size: 26px;
+}
+
+.card-element {
+  font-size: 18px;
+  color: blue;
+}
+
+.card-program {
+    font-size: 18px;
+    font-style: italic;
+}
+.program-element {
+    font-size: 16px;
+    color: crimson;
+}
