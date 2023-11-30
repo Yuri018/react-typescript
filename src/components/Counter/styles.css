@@ -1,0 +1,22 @@
+.counter-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 8px;
+    background-color: black;
+}
+
+.counter-button {
+    background-color: blue;
+    font-size: 14px;
+    width: 150px;
+    height: 50px;
+    outline: none;
+    cursor: pointer;
+    color: white;
+}
+
+.count {
+    color: green;
+    font-size: 20px;
+}
