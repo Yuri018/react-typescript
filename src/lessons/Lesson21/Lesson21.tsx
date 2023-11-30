@@ -1,18 +1,22 @@
-import {useState} from "react"
+import { useState } from "react";
+
 import Counter from "../../components/Counter";
 
 import "./styles.css";
 
-
 function Lesson21() {
+  // Создаем useState для управления состоянием счетчика
+  const [count, setCount] = useState<number>(0);
 
-  const [count, setCount] = useState(0);
+  // Создаем функцию onPlus
   const onPlus = (): void => {
-    setCount((prevValue: number) => prevValue + 1)
+    setCount((prevValue: number) => prevValue + 1);
   };
+
+  // Создаем функцию onMinus
   const onMinus = (): void => {
-    setCount((prevValue: number) => prevValue - 1)
-  }
+    setCount((prevValue: number) => prevValue - 1);
+  };
 
   // 1. null и undefined
   let emptyContainer: null = null;
@@ -61,14 +65,14 @@ function Lesson21() {
   console.log(SEASONS.SUMMER === "Summer");
   console.log(spring);
 
-  // 7.Типизация обьектов
+  // 7. Типизация обьектов
 
   interface Persons {
     pets: string[];
   }
 
   interface Persons2 {
-    item: number;
+    someInfo?: string;
   }
 
   interface Person extends Persons, Persons2 {
@@ -76,23 +80,28 @@ function Lesson21() {
     lastName: string;
     age: number;
     hairColor: string;
-    isMarried: boolean;
-  };
+    // ? - обозначает что свойство не обязательное
+    isMarried?: boolean;
+  }
 
-  const person: Person = { //будет ошибка пока не напишем свойство, которое добавили в интерфейсе Persons
-    name: "John",
+  const person: Person = {
+    name: "Josh",
     lastName: "Smith",
     age: 35,
     hairColor: "Black",
-    isMarried: false,
-    pets: ["tiger"],
-    item: 2,
+    pets: ["Tiger"],
   };
-  
 
-  return <div className="lesson21-wrapper">
-    <Counter count={count} onPlus={onPlus} onMinus={onMinus} />
-</div>;
+  // 8. Несколько типов одной переменной
+  let some: string | undefined = undefined;
+
+  some = "Hello";
+
+  return (
+    <div className="lesson21-wrapper">
+      <Counter count={count} onPlus={onPlus} onMinus={onMinus} />
+    </div>
+  );
 }
 
 export default Lesson21;
