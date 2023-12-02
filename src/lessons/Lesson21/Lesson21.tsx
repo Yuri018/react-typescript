@@ -72,7 +72,7 @@ function Lesson21() {
   }
 
   interface Persons2 {
-    someInfo?: string;
+    someInfo?: string; // ? - обозначает что свойство не обязательное
   }
 
   interface Person extends Persons, Persons2 {
