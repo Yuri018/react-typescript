@@ -1,0 +1,17 @@
+.homework21-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.icon-button {
+    display: flex;
+    size: 30px;
+    cursor: pointer;
+}
+
+.counter {
+    display: flex;
+    font-size: 80px;
+    margin: 30px;
+}
