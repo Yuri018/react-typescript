@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./styles.css";
-import image1 from "./assets/like.png";
-import image2 from "./assets/dislike.png";
+// import IconLike from '../../assets/like.png';
+import {LikeIcon, DislikeIcon} from '../../assets'
 import Button from "../../components/Button";
 
 function HomeWork21() {
@@ -9,11 +9,11 @@ function HomeWork21() {
   const [dislikes, setDislikes] = useState<number>(0);
 
   const likePlus = (): void => {
-    setLike(likes + 1);
+    setLike((prevValue) => prevValue + 1);
   };
 
   const likeMinus = (): void => {
-    setDislikes(dislikes + 1);
+    setDislikes((prevValue) => prevValue + 1);
   };
 
   const resetResults = (): void => {
@@ -25,11 +25,11 @@ function HomeWork21() {
     <div className="homework21-wrapper">
       <div className="button-container">
       <button onClick={likePlus}>
-        <img src="image1" alt="Like" />
+        <img src={LikeIcon} alt="Like" />
       </button>
       <p className="counter">{likes > 0 && likes}</p>
       <button onClick={likeMinus}>
-        <img src="./assets/dislike.png" alt="Dislike" />
+        <img src={DislikeIcon} alt="Dislike" />
       </button>
       <p className="counter">{dislikes > 0 && dislikes}</p>
       </div>
