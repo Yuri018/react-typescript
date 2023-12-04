@@ -1,6 +1,7 @@
 // Lessons
 // import Lesson20 from "./lessons/Lesson20";
 // import Lesson21 from "./lessons/Lesson21";
+import Lesson22 from "lessons/Lesson22";
 
 //Consultations
 // import Counsultation20 from "./consultations/Consultation20";
@@ -8,7 +9,7 @@
 //Homeworks
 // import Homework20 from "./homeworks/Homework20";
 // import HomeWork21 from "./homeworks/HomeWork21";
-import Lesson22 from "lessons/Lesson22";
+
 
 import "./App.css";
 // 

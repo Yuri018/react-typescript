@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface ButtonComponetProps {
-  $isRedFont?: boolean | undefined;
+  $isRedFont?: boolean | undefined | any;
 }
 
 export const ButtonComponent = styled.button<ButtonComponetProps>`
