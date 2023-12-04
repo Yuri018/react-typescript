@@ -1,14 +1,25 @@
-import './styles.css'
+import { ButtonComponent } from "./styles";
 
-interface ButtonProps {
-    onClick: () => void;
-}
+import { ButtonProps } from "./types";
 
-function Button({onClick}: ButtonProps) {
-    return <div>
-        <button className='button-component' onClick={onClick}>Reset</button>
-    </div>
-    
+function Button({
+  disabled = false,
+  name = "Send",
+  type = "submit",
+  isRedFont,
+  onClick,
+}: ButtonProps) {
+  return (
+    <ButtonComponent
+      disabled={disabled}
+      type={type}
+      className="button-component"
+      onClick={onClick}
+      $isRedFont={isRedFont}
+    >
+      {name}
+    </ButtonComponent>
+  );
 }
 
 export default Button;
