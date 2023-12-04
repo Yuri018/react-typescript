@@ -1,8 +1,11 @@
 import { useState } from "react";
 import "./styles.css";
-// import IconLike from '../../assets/like.png';
-import {LikeIcon, DislikeIcon} from '../../assets'
-import Button from "../../components/Button";
+// import Button from '../../components/Button'
+// 1 способ: импорт напрямую из файла с иконкой
+// import LikeIcon from "../../assets/like.png";
+// 2 способ: импорт из общего файла index.ts
+import {LikeIcon, DislikeIcon} from 'assets';
+import Button from "components/Button";
 
 function HomeWork21() {
   const [likes, setLike] = useState<number>(0);
