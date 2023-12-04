@@ -1,0 +1,17 @@
+.homework21-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.counter {
+  display: flex;
+  font-size: 30px;
+  margin: 30px;
+}
