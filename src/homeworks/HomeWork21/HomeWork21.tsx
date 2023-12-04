@@ -27,11 +27,11 @@ function HomeWork21() {
       <button onClick={likePlus}>
         <img src="image1" alt="Like" />
       </button>
-      <p className="counter">{likes > 0 ? likes : ""}</p>
+      <p className="counter">{likes > 0 && likes}</p>
       <button onClick={likeMinus}>
         <img src="./assets/dislike.png" alt="Dislike" />
       </button>
-      <p className="counter">{dislikes > 0 ? dislikes : ""}</p>
+      <p className="counter">{dislikes > 0 && dislikes}</p>
       </div>
       <Button onClick={resetResults} />
     </div>
