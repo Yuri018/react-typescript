@@ -15,15 +15,15 @@ export const Lesson24Wrapper = styled.div`
 
 export const Text = styled.p`
   font-size: 20px;
-  color: white;
+  color: black;
 `;
 
 export const Card = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  min-width: fit-content;
-  height: 200px;
+  gap:10px;
+  width: 100%;
+  height: 500px;
   padding: 10px;
   background-color: white;
 `;
