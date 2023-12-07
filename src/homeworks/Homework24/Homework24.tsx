@@ -14,11 +14,11 @@ function Homework24() {
     console.log(response);
     if (response.ok) {
       const data = await response.json();
-      setTimeout(() => alert("You got a new joke"), 0);
       setRandomJoke(data);
+      setTimeout(() => alert("You got a new joke"), 0);     
     } else {
-      setTimeout(() => alert("Error during data retrieval"), 0);
       setJokeError("Error during data retrieval");
+      setTimeout(() => alert("Error during data retrieval"), 0);
     }
 
     // useEffect(() => {
