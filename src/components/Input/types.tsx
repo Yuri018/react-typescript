@@ -5,7 +5,7 @@ export interface InputProps {
   disabled?: boolean;
   name?: string;
   labelName: string;
-  value?: string;
+  value?: string | number;
   onChange?: ChangeEventHandler<HTMLInputElement> | undefined;
   type?: 'text' | 'password' | 'checkbox';
   error?: string | undefined;
