@@ -1,45 +1,47 @@
 import { useState } from "react";
 import "./styles.css";
+import Button from "components/Button";
 // import Button from '../../components/Button'
 // 1 способ: импорт напрямую из файла с иконкой
 // import LikeIcon from "../../assets/like.png";
 // 2 способ: импорт из общего файла index.ts
-import {LikeIcon, DislikeIcon} from 'assets';
-import Button from "components/Button";
+import { LikeIcon, DislikeIcon } from "assets";
 
-function HomeWork21() {
-  const [likes, setLike] = useState<number>(0);
-  const [dislikes, setDislikes] = useState<number>(0);
+function Homework21() {
+  const [like, setLike] = useState<number>(0);
+  const [dislike, setDislike] = useState<number>(0);
 
-  const likePlus = (): void => {
-    setLike((prevValue) => prevValue + 1);
+  const plusLike = (): void => {
+    setLike((prevValue: number) => prevValue + 1);
   };
 
-  const likeMinus = (): void => {
-    setDislikes((prevValue) => prevValue + 1);
+  const plusDislike = (): void => {
+    setDislike((prevValue: number) => prevValue + 1);
   };
 
   const resetResults = (): void => {
     setLike(0);
-    setDislikes(0);
+    setDislike(0);
   };
 
   return (
-    <div className="homework21-wrapper">
-      <div className="button-container">
-      <button onClick={likePlus}>
-        <img src={LikeIcon} alt="Like" />
-      </button>
-      <p className="counter">{likes > 0 && likes}</p>
-      <button onClick={likeMinus}>
-        <img src={DislikeIcon} alt="Dislike" />
-      </button>
-      <p className="counter">{dislikes > 0 && dislikes}</p>
+    <div
+      onClick={() => console.log("Hello world")}
+      className="homework21-wrapper"
+    >
+      <div className="like-container">
+        <img src={LikeIcon} alt="like" onClick={plusLike} />
+        <p>{like > 0 && like}</p>
       </div>
-      <Button onClick={resetResults} />
+      <div className="dislike-container">
+        <img src={DislikeIcon} alt="dislike" onClick={plusDislike} />
+        <p>{dislike > 0 && dislike}</p>
+      </div>
+      <div className="button-container">
+        <Button name="Reset Results" type="button" onClick={resetResults} />
+      </div>
     </div>
-    
   );
 }
 
-export default HomeWork21;
+export default Homework21;

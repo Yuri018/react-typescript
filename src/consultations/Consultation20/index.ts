@@ -1,3 +1,3 @@
-import Consutation20 from "./Consultation20";
+import Counsultation20 from "./Counsultation20";
 
-export default Consutation20;
+export default Counsultation20;

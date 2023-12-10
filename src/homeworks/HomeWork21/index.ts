@@ -1,3 +1,3 @@
-import HomeWork21 from "./HomeWork21";
+import Homework21 from "./Homework21";
 
-export default HomeWork21;
+export default Homework21;

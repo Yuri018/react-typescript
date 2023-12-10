@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Homework23Wrapper = styled.div`
-display: flex;
+  display: flex;
   flex-direction: row;
   align-items: center;
   padding: 70px;
@@ -11,7 +11,7 @@ display: flex;
   background-color: black;
 `;
 
-export const CustomerData = styled.div`
+export const CreatePersonCard = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 500px;

@@ -1,16 +1,16 @@
-import { ChangeEvent, useState, SetStateAction, Dispatch } from "react";
+import { useState, ChangeEvent, SetStateAction, Dispatch } from "react";
+
 import Input from "components/Input";
 import Button from "components/Button";
 
 import {
+  CreatePersonCard,
   Homework23Wrapper,
-  CustomerData,
   PersonCard,
   PersonInfoBig,
   PersonInfoContainer,
   PersonInfoSmall,
 } from "./styles";
-import { Console } from "console";
 
 interface UserInfo {
   name: string;
@@ -22,9 +22,12 @@ interface UserInfo {
 function Homework23() {
   const [nameValue, setNameValue] = useState<string>("");
   const [lastNameValue, setLastNameValue] = useState<string>("");
-  const [positionValue, setPositionValue] = useState<string>("");
   const [ageValue, setAgeValue] = useState<string>("");
-
+  const [jobPositionValue, setJobPositionValue] = useState<string>("");
+  // Создадим state, который решает когда нам карточку показывать, а когда нет
+  const [isShowCard, setIsShowCard] = useState<boolean>(false);
+  // Создаем контейнер(стейт), в котором будет храниться информация для карточки,
+  // чтобы она туда добавлялась только на onClick
   const [userInfo, setUserInfo] = useState<UserInfo>({
     name: "",
     lastName: "",
@@ -32,18 +35,21 @@ function Homework23() {
     jobPosition: "",
   });
 
-  //   const onChangeNameInput = (event: ChangeEvent<HTMLInputElement>) => {
-  //     setNameValue(event.target.value);
-  //   };
-  //   const onChangeLastNameInput = (event: ChangeEvent<HTMLInputElement>) => {
-  //     setLastNameValue(event.target.value);
-  //   };
-  //   const onChangePositionValueInput = (event: ChangeEvent<HTMLInputElement>) => {
-  //     setPositionValue(event.target.value);
-  //   };
-  //   const onChangeAgeValueInput = (event: ChangeEvent<HTMLInputElement>) => {
-  //     setAgeValue(event.target.value);
-  //   };
+  // const onChangeNameValue = (event: ChangeEvent<HTMLInputElement>) => {
+  //   setNameValue(event.target.value);
+  // };
+
+  // const onChangeLastNameValue = (event: ChangeEvent<HTMLInputElement>) => {
+  //   setLastNameValue(event.target.value);
+  // };
+
+  // const onChangeAgeValue = (event: ChangeEvent<HTMLInputElement>) => {
+  //   setAgeValue(event.target.value);
+  // };
+
+  // const onChangeJobPositionValue = (event: ChangeEvent<HTMLInputElement>) => {
+  //   setJobPositionValue(event.target.value);
+  // };
 
   const onChangeFieldsValue = (
     event: ChangeEvent<HTMLInputElement>,
@@ -52,87 +58,82 @@ function Homework23() {
     setFieldValue(event.target.value);
   };
 
-  //создаем стейт, который решает кргда показывать карточку
-  const [isSchowCard, setIsSchowCard] = useState<boolean>(false);
-
   return (
     <Homework23Wrapper>
-      <CustomerData>
+      <CreatePersonCard>
         <Input
-          value={nameValue}
-          name="name"
-          labelName="Your Name"
-          placeholder="enter your name"
           onChange={(event: ChangeEvent<HTMLInputElement>) =>
             onChangeFieldsValue(event, setNameValue)
           }
+          value={nameValue}
+          labelName="Имя"
+          placeholder="Иван"
         />
         <Input
-          value={lastNameValue}
-          name="last name"
-          labelName="Your Last Name"
-          placeholder="enter your last name"
           onChange={(event: ChangeEvent<HTMLInputElement>) =>
             onChangeFieldsValue(event, setLastNameValue)
           }
+          value={lastNameValue}
+          labelName="Фамилия"
+          placeholder="Василевский"
         />
         <Input
-          value={positionValue}
-          name="Job"
-          labelName="Your workplace"
-          placeholder="your workplace"
-          onChange={(event: ChangeEvent<HTMLInputElement>) =>
-            onChangeFieldsValue(event, setPositionValue)
-          }
-        />
-        <Input
-          value={ageValue}
-          name="Age"
-          labelName="Your Age"
-          placeholder="enter your age"
           onChange={(event: ChangeEvent<HTMLInputElement>) =>
             onChangeFieldsValue(event, setAgeValue)
           }
+          value={ageValue}
+          labelName="Возраст"
+          placeholder="25"
+        />
+        <Input
+          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+            onChangeFieldsValue(event, setJobPositionValue)
+          }
+          value={jobPositionValue}
+          labelName="Должность"
+          placeholder="Старший специалист"
         />
         <Button
-          name="Create Card"
+          name="Создать"
           onClick={() => {
+            // Если все значения у нас не пустые, то показываем карточку
             if (
               !!nameValue &&
               !!lastNameValue &&
-              !!positionValue &&
-              !!ageValue
+              !!ageValue &&
+              !!jobPositionValue
             ) {
               setUserInfo({
                 name: nameValue,
                 lastName: lastNameValue,
                 ageValue: ageValue,
-                jobPosition: positionValue,
+                jobPosition: jobPositionValue,
               });
-              setIsSchowCard(true);
+              setIsShowCard(true);
             } else {
-                setIsSchowCard(false);
-              setTimeout(() => alert("Enter all fields"), 0);
+              // Показываем alert если хотя бы одно из полей пустое
+              setIsShowCard(false);
+              setTimeout(() => alert("Введите данные во все поля"), 0);
             }
           }}
         />
-      </CustomerData>
-      {isSchowCard && (
+      </CreatePersonCard>
+      {isShowCard && (
         <PersonCard>
           <PersonInfoContainer>
-            <PersonInfoSmall>Name</PersonInfoSmall>
+            <PersonInfoSmall>Имя</PersonInfoSmall>
             <PersonInfoBig>{userInfo.name}</PersonInfoBig>
           </PersonInfoContainer>
           <PersonInfoContainer>
-            <PersonInfoSmall>LastName</PersonInfoSmall>
+            <PersonInfoSmall>Фамилия</PersonInfoSmall>
             <PersonInfoBig>{userInfo.lastName}</PersonInfoBig>
           </PersonInfoContainer>
           <PersonInfoContainer>
-            <PersonInfoSmall>Age</PersonInfoSmall>
+            <PersonInfoSmall>Возраст</PersonInfoSmall>
             <PersonInfoBig>{userInfo.ageValue}</PersonInfoBig>
           </PersonInfoContainer>
           <PersonInfoContainer>
-            <PersonInfoSmall>Job</PersonInfoSmall>
+            <PersonInfoSmall>Должность</PersonInfoSmall>
             <PersonInfoBig>{userInfo.jobPosition}</PersonInfoBig>
           </PersonInfoContainer>
         </PersonCard>

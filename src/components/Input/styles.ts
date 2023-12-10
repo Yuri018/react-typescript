@@ -20,12 +20,12 @@ export const InputComponent = styled.input<InputComponentProps>`
   width: 100%;
   height: 50px;
   padding: 20px;
-  border: ${({ $error }) => (!!$error ? "1px solid red" : "1px solid black")};
+  border: ${({ $error }: any) => (!!$error ? "1px solid red" : "1px solid black")};
   cursor: ${({ disabled }: any) => (disabled ? "not-allowed" : "default")};
 `;
 
 export const ErrorContainer = styled.div`
-width: 100%;
-height: fit-content;
-color: red;
+  width: 100%;
+  height: 20px;
+  color: red;
 `;
