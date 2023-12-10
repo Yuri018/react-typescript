@@ -20,7 +20,7 @@ export const InputComponent = styled.input<InputComponentProps>`
   width: 100%;
   height: 50px;
   padding: 20px;
-  border: ${({ $error }) => (!!$error ? "1px solid red" : "1px solid black")};
+  border: ${({ $error }:any) => (!!$error ? "1px solid red" : "1px solid black")};
   cursor: ${({ disabled }: any) => (disabled ? "not-allowed" : "default")};
 `;
 
