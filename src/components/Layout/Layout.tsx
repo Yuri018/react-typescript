@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 import {
   LayoutWrapper,
@@ -7,6 +7,8 @@ import {
   Main,
   NavContainer,
   StyledLink,
+  FooterNaveContainer,
+  FooterStyledLink,
 } from "./styles";
 import { LayoutProps } from "./types";
 
@@ -17,30 +19,51 @@ function Layout({ children }: LayoutProps) {
   return (
     <LayoutWrapper>
       <Header>
-        Logo
+        <Link to="/">Logo</Link>
         <NavContainer>
           <StyledLink
-            style={({ isActive }: any) => ({ color: isActive ? "blue" : "white" })}
+            style={({ isActive }: any) => ({
+              color: isActive ? "blue" : "white",
+            })}
             to="/"
           >
             Home
           </StyledLink>
           <StyledLink
-            style={({ isActive }: any) => ({ color: isActive ? "blue" : "white" })}
+            style={({ isActive }: any) => ({
+              color: isActive ? "blue" : "white",
+            })}
             to="/users"
           >
             Users
           </StyledLink>
           <StyledLink
-            style={({ isActive }: any) => ({ color: isActive ? "blue" : "white" })}
+            style={({ isActive }: any) => ({
+              color: isActive ? "blue" : "white",
+            })}
             to="/about"
           >
             About
           </StyledLink>
+          <StyledLink
+            style={({ isActive }: any) => ({
+              color: isActive ? "blue" : "white",
+            })}
+            to="/clients"
+          >
+            Clients
+          </StyledLink>
         </NavContainer>
       </Header>
       <Main>{children}</Main>
-      <Footer>Footer</Footer>
+      <Footer>
+        <FooterNaveContainer>
+          <FooterStyledLink to="/">Home</FooterStyledLink>
+          <FooterStyledLink to="/users">Users</FooterStyledLink>
+          <FooterStyledLink to="/about">About</FooterStyledLink>
+          <FooterStyledLink to="/clients">Clients</FooterStyledLink>
+        </FooterNaveContainer>
+      </Footer>
     </LayoutWrapper>
   );
 }

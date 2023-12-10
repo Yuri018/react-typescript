@@ -5,6 +5,10 @@ import Layout from "components/Layout";
 import Home from "pages/Home";
 import About from "pages/About";
 import Users from "pages/Users";
+import Clients from "pages/Clients";
+import Fender from "pages/Clients/Companies/Fender";
+import Gipson from "pages/Clients/Companies/Gipson";
+import Ibanez from "pages/Clients/Companies/Ibanez";
 // Lessons
 // import Lesson20 from "./lessons/Lesson20";
 // import Lesson21 from "./lessons/Lesson21";
@@ -34,6 +38,10 @@ function App() {
           <Route path="/users" element={<Users />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element="Page Not Found" />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/clients/fender" element={<Fender />} />
+          <Route path="/clients/gipson" element={<Gipson />} />
+          <Route path="/clients/ibanez" element={<Ibanez />} />
         </Routes>
         {/* Lessons */}
         {/* <Lesson20 /> */}
