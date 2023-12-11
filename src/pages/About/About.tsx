@@ -1,7 +1,7 @@
-import {AboutWrpapper} from './styles';
+import {AboutWrapper} from './styles';
 
 function About () {
-    return <AboutWrpapper>About</AboutWrpapper>
+    return <AboutWrapper>About</AboutWrapper>
 }
 
 export default About;

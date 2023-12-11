@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { colors } from "styles/colors";
 
@@ -46,8 +46,26 @@ export const Main = styled.main`
 export const Footer = styled.footer`
   display: flex;
   width: 100%;
-  height: 100px;
+  height: 120px;
   padding: 20px;
   background-color: ${colors.primary};
   color: ${colors.white};
+`;
+
+export const FooterStyledLink = styled(NavLink)`
+  color: ${colors.white};
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-decoration: none;
+  &:hover {
+    color: blue;
+  }
+  &.active {
+    color: yellow;
+  }
+`;
+
+export const FooterNaveContainer = styled.nav`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 `;
