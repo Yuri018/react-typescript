@@ -16,6 +16,7 @@ import Ibanez from "pages/Clients/Companies/Ibanez";
 // import Lesson24 from 'lessons/Lesson24';
 // import Lesson25 from "lessons/Lesson25";
 import Lesson27 from "lessons/Lesson27";
+import Homework27 from "homeworks/Homework27";
 
 //Consultations
 // import Counsultation20 from "./consultations/Consultation20";
@@ -35,7 +36,7 @@ function App() {
       <GlobalStyles />
       <Layout>
         <Routes>
-          <Route path="/" element={<Lesson27 />} />
+          <Route path="/" element={<Homework27 />} />
           <Route path="/users" element={<Users />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element="Page Not Found" />
