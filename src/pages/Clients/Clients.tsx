@@ -7,9 +7,9 @@ function Clients() {
     <ClientsWrapper>
       <h1>Clients</h1>
       <ClientsContainer>
-        <Link to={"/clients/fender"}>Fender</Link>
-        <Link to={"/clients/gipson"}>Gipson</Link>
-        <Link to={"/clients/ibanez"}>Ibanez</Link>
+        <Link to={"fender"}>Fender</Link>
+        <Link to={"gipson"}>Gipson</Link>
+        <Link to={"ibanez"}>Ibanez</Link>
       </ClientsContainer>
     </ClientsWrapper>
   );
