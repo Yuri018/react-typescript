@@ -6,7 +6,7 @@ function Fender() {
   const navigate = useNavigate();
 
   const goToBack = () => {
-    navigate("/clients");
+    navigate("/clients"); //Второй вариант перехода на предыдущую страницу navigate(-1);
   };
 
   return (
