@@ -5,19 +5,15 @@ import { Card } from "homeworks/Homework27/components";
 import { BlogManagementWrapper } from "./styles";
 import Button from "components/Button";
 
-interface PostData {
-  post: string;
-}
+// interface PostData {
+//   post: string;
+// }
 
-export const PostContext = createContext({
-  post: "",
-});
+export const PostContext = createContext("");
 
 function BlogManagement() {
-  const [textareaValue, setTextAreaValue] = useState<string>("");
-  const [postData, setPostData] = useState<PostData>({
-    post: "",
-  });
+  const [textareaValue, setTextAreaValue] = useState<string>('');
+  const [postData, setPostData] = useState<string>('');
 
   return (
     <PostContext.Provider value={postData}>
@@ -28,7 +24,7 @@ function BlogManagement() {
           setTextAreaValue(event.target.value)
         }
       />
-      <Button onClick={() => setPostData(textareaValue)} />
+      <Button name="Posting" onClick={() => setPostData(textareaValue)} />
       <Card />
     </BlogManagementWrapper>
     </PostContext.Provider>

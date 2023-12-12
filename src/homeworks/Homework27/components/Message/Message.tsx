@@ -7,7 +7,7 @@ import{MessageWrapper} from './styles';
 function Message() {
     const postData = useContext(PostContext);
     return <MessageWrapper>
-        <p>{postData.post}</p>
+        <p>{postData}</p>
 
     </MessageWrapper>
 }
