@@ -10,6 +10,7 @@ import Fender from "pages/Clients/Companies/Fender";
 import Gipson from "pages/Clients/Companies/Gipson";
 import Ibanez from "pages/Clients/Companies/Ibanez";
 import{BlogManagement, Card, Message} from './homeworks/Homework27/components'
+import Weather from "pages/Weather";
 // Lessons
 // import Lesson20 from "./lessons/Lesson20";
 // import Lesson21 from "./lessons/Lesson21";
@@ -29,13 +30,14 @@ import{BlogManagement, Card, Message} from './homeworks/Homework27/components'
 // import Homework24 from "homeworks/homework24";
 // import Homework24Alternative from "homeworks/homework24Alternative";
 // import Homework25 from "homeworks/Homework25";
-import Homework27 from "homeworks/Homework27";
+// import Homework27 from "homeworks/Homework27";
 
 function App() {
   return (
     <BrowserRouter>
       <GlobalStyles />
-      <Layout>
+      <Weather />
+      {/* <Layout>
         <Routes>
           <Route path="/" element={<Homework27 />} />
           <Route path="/users" element={<Users />} />
@@ -45,7 +47,7 @@ function App() {
           <Route path="/clients/fender" element={<Fender />} />
           <Route path="/clients/gipson" element={<Gipson />} />
           <Route path="/clients/ibanez" element={<Ibanez />} />
-        </Routes>
+        </Routes> */}
         {/* Lessons */}
         {/* <Lesson20 /> */}
         {/* <Lesson21 /> */}
@@ -62,7 +64,7 @@ function App() {
         {/* <Homework24 /> */}
         {/* <Homework24Alternative /> */}
         {/* <Homework25 /> */}
-      </Layout>
+      {/* </Layout> */}
     </BrowserRouter>
   );
 }
